@@ -1,3 +1,26 @@
+Metadata-Version: 2.4
+Name: mmmvae
+Version: 0.0.1
+Summary: MMMVAE: Multi‑Modal Metabolic Variational Auto‑Encoder for spatial transcriptomics
+Author-email: TianMiaoMiao <Tmm18846175562@163.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/TianMiaoMiaoWorkspace/MMMVAE
+Project-URL: Bug Tracker, https://github.com/TianMiaoMiaoWorkspace/MMMVAE/issues
+Keywords: spatial‑transcriptomics,metabolism,variational‑autoencoder,bioinformatics
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.23
+Requires-Dist: torch>=2.0
+Requires-Dist: pandas>=1.5
+Requires-Dist: scanpy>=1.9
+Requires-Dist: matplotlib>=3.6
+Requires-Dist: scikit-learn>=1.2
+Requires-Dist: tqdm
+Dynamic: license-file
+
 # MMMVAE
 Multi‑Modal Metabolic Variational Autoencoder
 ## Installation

@@ -37,7 +37,7 @@
 
 ## Usage: source("seurat_to_mmmvae.R")
 
-# species is one of 'Homo sapiens' and 'Mus_musculus'
+# species is one of 'Homo_sapiens' and 'Mus_musculus'
 # datatype is one of 'single_cell' and 'Spatial'
 # sample is sample name of input files, which is also used to name the output file
 # root is path of root eg :"D:/Desktop/MMMVAE/test/GSM8599602"
@@ -46,7 +46,7 @@
 seurat2mmmvae <- function(sample,species,datatype,root,output_root){
   stopifnot(is.character(sample))
   stopifnot(datatype %in% c("Spatial","single_cell"))
-  stopifnot(species %in% c("Homo sapiens","Mus_musculus"))
+  stopifnot(species %in% c("Homo_sapiens","Mus_musculus"))
   stopifnot(dir.exists(root))
 
   required_pkgs <- c("Seurat","rio","org.Hs.eg.db","org.Mm.eg.db","clusterProfiler",
@@ -60,7 +60,7 @@ seurat2mmmvae <- function(sample,species,datatype,root,output_root){
   if (!dir.exists(output_root)) {
     dir.create(output_root, recursive = TRUE)
   }
-  if(species=="Homo sapiens"){
+  if(species=="Homo_sapiens"){
     kegg_gene_list = kegg_gene_list_H
     metabolic_genes <- metabolic_genes_H
     } else if(species=="Mus_musculus"){
@@ -76,7 +76,7 @@ seurat2mmmvae <- function(sample,species,datatype,root,output_root){
       length(list.files(file.path(root, "filtered_feature_bc_matrix"))) > 0) {
     counts <- Seurat::Read10X(data.dir = file.path(root,"filtered_feature_bc_matrix"),
                       gene.column = 1)
-    if(species=="Homo sapiens"){
+    if(species=="Homo_sapiens"){
       if(grepl("^ENSG", rownames(counts)[1])){
         ensembl_id <- rownames(counts)
         gene_map <- clusterProfiler::bitr(

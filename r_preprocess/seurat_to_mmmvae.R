@@ -239,7 +239,7 @@ seurat2mmmvae <- function(sample,species,datatype,root,output_root){
   message(sprintf("Finished! Output file: %s", file)) 
   
   ##############neighbor_means##############
-  nn  <- FNN::get.knnx(coords, coords, k = 6)   # 返回 k 列
+  nn  <- FNN::get.knnx(coords, coords, k = 7)   # 7-11=6 
   neighbor_means <- matrix(0, 
                            nrow = nrow(metacounts), 
                            ncol = ncol(metacounts),
